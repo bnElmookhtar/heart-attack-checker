@@ -4,17 +4,15 @@ import numpy as np
 
 app = Flask(__name__)
 
-<<<<<<< HEAD
-=======
-# تحميل النموذج المحفوظ
->>>>>>> f2e5a36323dc2de1b3a03a5b667fb96503c64bc3
 model = joblib.load('models/manual_model.pkl')
 
 @app.route('/')
 def home():
+    """
+    The home page of the application that displays the prediction form.
+    """
+    return render_template('predict.html')  
     return render_template('predict.html') 
-
-/*************  ✨ Codeium Command 🌟  *************/
 @app.route('/predict', methods=['POST'])
 def predict():
     """Predict if a patient has a heart disease based on input features."""
@@ -44,7 +42,6 @@ def predict():
     prediction = model.predict(input_features)
 
     return jsonify({'prediction': str(prediction[0])})
-/******  d2f0f486-a159-4d25-a0e3-8cb22afe3cfd  *******/
 
 if __name__ == '__main__':
     app.run(debug=True)
