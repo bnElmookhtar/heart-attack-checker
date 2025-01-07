@@ -4,31 +4,21 @@ import numpy as np
 
 app = Flask(__name__)
 
-model = joblib.load('models/manual_model.pkl')
+# تحميل النموذج المحفوظ
+model = joblib.load('manual_model.pkl')
 
+# الصفحة الرئيسية لعرض نموذج الـ HTML
 @app.route('/')
 def home():
-    """
-    The home page of the application that displays the prediction form.
-    """
-    return render_template('predict.html')  
-    return render_template('predict.html') 
+    return render_template('predict.html')  # استخدام ملف predict.html من مجلد templates
+
+# دالة لاستقبال المدخلات والتنبؤ
 @app.route('/predict', methods=['POST'])
 def predict():
-    """Predict if a patient has a heart disease based on input features."""
+    # استلام المدخلات من الـ HTML
     data = request.get_json()
 
-    input_features = np.array([
-        [
-            int(data['chest_pain']),
-            int(data['slope']),
-            int(data['thalach']),
-            int(data['resting_ecg']),
-            int(data['num_major_vessels']),
-            int(data['age']),
-            int(data['exercise_induced_angina']),
-        ]
-    ])
+    # استخراج المدخلات (حولها إلى نوع بيانات مناسب)
     cp = int(data['cp'])
     slope = int(data['slope'])
     thalach = int(data['thalach'])
@@ -37,11 +27,15 @@ def predict():
     age = int(data['age'])
     exang = int(data['exang'])
 
+    # تحويل المدخلات إلى مصفوفة يمكن استخدامها من قبل النموذج
     input_features = np.array([[cp, slope, thalach, restecg, ca, age, exang]])
 
+    # إجراء التنبؤ باستخدام النموذج
     prediction = model.predict(input_features)
 
+    # إرجاع التنبؤ كنتيجة (1 أو 0)
     return jsonify({'prediction': str(prediction[0])})
 
+# تشغيل السيرفر
 if __name__ == '__main__':
     app.run(debug=True)
