@@ -48,22 +48,22 @@ heart-attack-checker/
 ### Machine Learning Model
 The machine learning model used in this project is built using scikit-learn. The model predicts the likelihood of a heart attack based on the following features:
 
-Chest Pain Type (cp)
-Maximum Heart Rate (thalach)
-Age (age)
-Slope (slope)
-Resting Electrocardiographic Results (restecg)
-Number of Major Vessels (ca)
-Exercise Induced Angina (exang)
-Model Workflow
-The user inputs the required data through the web interface.
-The data is sent to the backend, where it is processed.
-A prediction is made based on the trained machine learning model.
-The prediction is displayed along with an appropriate image (indicating heart attack risk or not).
+- Chest Pain Type (cp)
+- Maximum Heart Rate (thalach)
+- Age (age)
+- Slope (slope)
+- Resting Electrocardiographic Results (restecg)
+- Number of Major Vessels (ca)
+- Exercise Induced Angina (exang)
+- Model Workflow
+- The user inputs the required data through the web interface.
+- The data is sent to the backend, where it is processed.
+- A prediction is made based on the trained machine learning model.
+- The prediction is displayed along with an appropriate image (indicating heart attack risk or not).
 
-### Usage
-  Enter the health parameters into the form on the main page (predict.html).
-  Click the Predict button to submit the data.
-  The result will appear with an image indicating the prediction:
-  Heart Disease: If the prediction indicates a risk of heart attack.
-  No Heart Disease: If the prediction is negative (no risk of heart attack).
+### Usage:
+- Enter the health parameters into the form on the main page (predict.html).
+- Click the Predict button to submit the data.
+- The result will appear with an image indicating the prediction:
+- Heart Disease: If the prediction indicates a risk of heart attack.
+- No Heart Disease: If the prediction is negative (no risk of heart attack).
