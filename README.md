@@ -1,3 +1,5 @@
+![Logo](cover.gif)
+
 # Heart Attack Checker
 
 ### Overview
