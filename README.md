@@ -29,7 +29,7 @@ To install them, run:
 ```bash
 pip install -r requirements.txt
 ```
-
+````
 heart-attack-checker/
 │
 ├── app.py                        # Main Python file that runs the Flask app
@@ -43,7 +43,7 @@ heart-attack-checker/
 ├── models/                       # Folder containing trained machine learning models
 │   └── manual_model.pkl          # Trained machine learning model
 └── README.md                     # Project README file
-
+````
 
 ### Machine Learning Model
 The machine learning model used in this project is built using scikit-learn. The model predicts the likelihood of a heart attack based on the following features:
