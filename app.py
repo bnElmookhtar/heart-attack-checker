@@ -5,7 +5,7 @@ import numpy as np
 app = Flask(__name__)
 
 # تحميل النموذج المحفوظ
-model = joblib.load('manual_model.pkl')
+model = joblib.load('models/manual_model.pkl')
 
 # الصفحة الرئيسية لعرض نموذج الـ HTML
 @app.route('/')
